@@ -1,15 +1,16 @@
-FROM python:3.10
+FROM python:3.12.2
 
-WORKDIR /Jisshu-filter-bot
-RUN chmod 777 /Jisshu-filter-bot
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libmediainfo0v5 ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN apt update && apt install -y --no-install-recommends git \
-    && rm -rf /var/lib/apt/lists/*
+WORKDIR /ProviderLazyX
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip --root-user-action=ignore && \
+    pip install --no-cache-dir -r requirements.txt --root-user-action=ignore
 
 COPY . .
-RUN chmod +x start.sh
 
-CMD ["bash", "start.sh"]
+CMD ["python3", "bot.py"]
