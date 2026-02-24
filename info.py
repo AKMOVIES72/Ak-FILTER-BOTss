@@ -154,7 +154,7 @@ IS_SEND_MOVIE_UPDATE = is_enabled(
 MAX_BTN = int(environ.get("MAX_BTN", "8"))
 AUTO_DELETE = is_enabled("AUTO_DELETE", True)
 DELETE_TIME = int(environ.get("DELETE_TIME", 1200))
-IMDB = is_enabled("IMDB", False)
+IMDB = is_enabled("IMDB", True)
 FILE_CAPTION = environ.get("FILE_CAPTION", f"{script.FILE_CAPTION}")
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled("LONG_IMDB_DESCRIPTION", False)
@@ -172,7 +172,7 @@ PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
 if "DYNO" in environ:
     ON_HEROKU = True
 else:
-    ON_HEROKU = False
+    ON_HEROKU = True
 URL = environ.get("FQDN", "https://ak-filter-botss-1.onrender.com")
 
 # Commands
