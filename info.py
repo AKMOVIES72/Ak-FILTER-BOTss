@@ -65,7 +65,7 @@ MOVIE_UPDATE_CHANNEL = int(environ.get("MOVIE_UPDATE_CHANNEL", "-1002040926684")
 
 # Added Link Here Not Id
 SUPPORT_CHAT = environ.get("SUPPORT_CHAT", "https://t.me/Akofficialadmin_bot")
-MOVIE_GROUP_LINK = environ.get("MOVIE_GROUP_LINK", "https://t.me/telugutigerss")
+MOVIE_GROUP_LINK = environ.get("MOVIE_GROUP_LINK", "https://t.me/+EieuAP_YMHo0MTc1")
 
 # Verification
 IS_VERIFY = is_enabled("IS_VERIFY", True)
@@ -173,7 +173,7 @@ if "DYNO" in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("FQDN", "ak-filter-botss-1.onrender.com")
+URL = environ.get("FQDN", "https://ak-filter-botss-1.onrender.com")
 
 # Commands
 admin_cmds = [
